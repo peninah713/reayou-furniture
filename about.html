@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - Reayou Furniture LTD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary-color: #ffffff;
+      --text-dark: #000000;
+      --bg-overlay: rgba(0, 0, 0, 0.7);
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: var(--primary-color);
+      background: url('conference.jfif') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    nav {
+      background-color: var(--bg-overlay);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 25px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ccc;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    header {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.2em;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.65);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      margin-bottom: 10px;
+      font-size: 1.6em;
+      border-bottom: 1px solid white;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .section p, .section ul {
+      line-height: 1.7;
+      font-size: 1.05em;
+    }
+
+    .section ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 20px 10px 0 0;
+      background-color: #ffffff;
+      color: #000;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #ccc;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: var(--bg-overlay);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Reayou</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>About Reayou Furniture LTD</h1>
+  </header>
+
+  <div class="container">
+    <div class="section">
+      <h2>Who We Are</h2>
+      <p>Reayou Furniture LTD is a modern, forward-thinking furniture company based in Athi River, Kenya. We specialize in creating stylish, comfortable, and functional office furniture designed to inspire productivity and elegance in every workspace.</p>
+      <p>With a deep passion for craftsmanship and innovation, we blend quality materials with modern design to bring you pieces that are not only beautiful but built to last.</p>
+    </div>
+
+    <div class="section">
+      <h2>Our Mission</h2>
+      <p>To deliver premium office furniture that enhances workspaces through ergonomic design, aesthetic appeal, and unmatched durability — tailored to suit businesses of all sizes.</p>
+    </div>
+
+    <div class="section">
+      <h2>Our Vision</h2>
+      <p>To be East Africa’s most trusted name in office furniture — setting the benchmark for innovation, customer service, and design excellence.</p>
+    </div>
+
+    <div class="section">
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li>Premium materials & modern designs</li>
+        <li>Custom-made furniture solutions</li>
+        <li>Fast, reliable delivery services</li>
+        <li>Professional consultation & after-sales support</li>
+        <li>Competitive prices without compromising quality</li>
+      </ul>
+    </div>
+    <div class="section">
+  <h2>What Our Clients Say</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+    <div style="flex: 1 1 280px; background-color: #111; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(255,255,255,0.05);">
+      <p>"Reayou transformed our office space beyond our expectations. The designs are modern, sleek, and comfortable."</p>
+      <p style="font-weight: bold; margin-top: 10px;">– Sarah W., Nairobi</p>
+    </div>
+    <div style="flex: 1 1 280px; background-color: #111; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(255,255,255,0.05);">
+      <p>"Professional service from start to finish. Delivery was fast, and the furniture quality is outstanding."</p>
+      <p style="font-weight: bold; margin-top: 10px;">– James M., Athi River</p>
+    </div>
+    <div style="flex: 1 1 280px; background-color: #111; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(255,255,255,0.05);">
+      <p>"We’ve worked with Reayou for over 2 years. They never disappoint. Highly recommended for any office project."</p>
+      <p style="font-weight: bold; margin-top: 10px;">– Brenda K., Machakos</p>
+    </div>
+  </div>
+</div>
+
+
+    <a href="gallery.html" class="button">View Our Work</a>
+    <a href="contact.html" class="button">Get in Touch</a>
+  </div>
+
+  <footer>
+    <p>Reayou Furniture LTD | Athi River - Devki, Grayland VI</p>
+    <p>Call: 0715 780 473 | Email: info@reayoufurniture.com</p>
+    <p>&copy; 2025 Reayou Furniture LTD. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
