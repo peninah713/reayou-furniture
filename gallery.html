@@ -2,153 +2,163 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reayou Furniture Gallery</title>
+  <title>Gallery - Reayou Furniture LTD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
+      padding: 0;
+      background-color: #050505;
+      color: white;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     nav {
-      background-color: #000;
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      border-bottom: 1px solid #333;
+      background-color: #181717;
+      padding: 12px 0;
+      text-align: center;
     }
 
     nav a {
-      color: #fff;
+      color: white;
+      margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #bbb;
     }
 
     header {
-      text-align: center;
-      padding: 30px 10px;
-      border-bottom: 1px solid #333;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
+      background-image: url("back2.jfif");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
     main {
-      padding: 30px 20px;
-    }
-
-    section {
-      margin-bottom: 50px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
     }
 
     section h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
       font-size: 1.6em;
-      margin-bottom: 10px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
     }
 
     .gallery-images {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
     }
 
-    .product-card {
-      background-color: #111;
-      padding: 15px;
-      border-radius: 10px;
-      width: 80px;
+    .gallery-item {
+      cursor: pointer;
       text-align: center;
     }
 
-    .product-card img {
+    .gallery-item img {
       width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+
+    .gallery-item p {
+      margin-top: 10px;
+      font-size: 0.95em;
+    }
+
+    .background-section {
+      margin: 60px 0 40px;
+      background-color: #000;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: 500;
+    }
+
+    .background-section a {
+      color: #1a6b3e;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: rgb(12, 12, 12);
+      color: rgb(238, 233, 233);
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.85);
+    }
+
+    .modal-content {
+      background-color: #222;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+      color: white;
       border-radius: 10px;
+      text-align: center;
     }
 
-    .product-card p {
-      margin: 10px 0;
-      color: #ccc;
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
     }
 
-    .view-btn {
-      background-color: #fff;
-      color: #000;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 5px;
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
       font-weight: bold;
       cursor: pointer;
     }
 
-    .view-btn:hover {
-      background-color: #444;
-      color: #fff;
-    }
-
-    footer {
-      background-color: #000;
-      padding: 20px;
-      text-align: center;
-      border-top: 1px solid #333;
-      font-size: 0.9em;
-      color: #aaa;
-    }
-
-    /* Modal */
-    #modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.95);
-      color: white;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 1000;
-      padding: 20px;
-    }
-
-    #modal img {
-      max-width: 90%;
-      max-height: 60vh;
-      border-radius: 10px;
-    }
-
-    #modal-desc {
-      margin-top: 15px;
-      color: #ddd;
-      text-align: center;
-    }
-
-    #modal button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #fff;
-      color: #000;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #modal button:hover {
-      background-color: #444;
+    .close:hover {
       color: #fff;
     }
 
     @media (max-width: 600px) {
-      .gallery-images {
-        flex-direction: column;
-        align-items: center;
+      .modal-content {
+        width: 90%;
       }
     }
   </style>
@@ -157,9 +167,9 @@
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="about.html">About Us</a>
     <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html">Contact Us</a>
   </nav>
 
   <header>
@@ -167,128 +177,99 @@
   </header>
 
   <main>
-
-    <!-- Office Section -->
+    <!-- Office Furniture Section -->
     <section>
       <h2>Office Furniture</h2>
       <div class="gallery-images">
-        <div class="product-card">
-          <img src="office1.jpeg" alt="Executive desk and ergonomic chair set.">
-          <p>Executive desk and ergonomic chair set.</p>
-          <button class="view-btn" data-img="office1.jpeg" data-desc="Executive desk and ergonomic chair set.">View</button>
+        <div class="gallery-item" onclick="openModal('office1.jpeg', 'Modern Office Desk and Chair')">
+          <img src="office1.jpeg" alt="Office 1">
+          <p>Modern Office Desk and Chair</p>
         </div>
-        <div class="product-card">
-          <img src="office2.jpeg" alt="Workstation cubicles with sleek dividers.">
-          <p>Workstation cubicles with sleek dividers.</p>
-          <button class="view-btn" data-img="office2.jpeg" data-desc="Workstation cubicles with sleek dividers.">View</button>
+        <div class="gallery-item" onclick="openModal('office2.jpeg', 'Office Workstation Setup')">
+          <img src="office2.jpeg" alt="Office 2">
+          <p>Office Workstation Setup</p>
         </div>
-        <div class="product-card">
-          <img src="office3.jpeg" alt="Modern conference table and chairs.">
-          <p>Modern conference table and chairs.</p>
-          <button class="view-btn" data-img="office3.jpeg" data-desc="Modern conference table and chairs.">View</button>
-        </div>
-        <div class="product-card">
-          <img src="office4.jpeg" alt="Compact office workstation with drawers.">
-          <p>Compact office workstation with drawers.</p>
-          <button class="view-btn" data-img="office4.jpeg" data-desc="Compact office workstation with drawers.">View</button>
+        <div class="gallery-item" onclick="openModal('conference.jfif', 'Conference Table and Chairs')">
+          <img src="conference.jfif" alt="Conference Table">
+          <p>Conference Table and Chairs</p>
         </div>
       </div>
     </section>
 
-    <!-- House Section -->
+    <!-- House Furniture Section -->
     <section>
       <h2>House Furniture</h2>
       <div class="gallery-images">
-        <div class="product-card">
-          <img src="house1.jpeg" alt="Luxury living room sofa set.">
-          <p>Luxury living room sofa set.</p>
-          <button class="view-btn" data-img="house1.jpeg" data-desc="Luxury living room sofa set.">View</button>
+        <div class="gallery-item" onclick="openModal('house1.jpeg', 'Cozy Living Room Sofa')">
+          <img src="house1.jpeg" alt="House Sofa">
+          <p>Cozy Living Room Sofa</p>
         </div>
-        <div class="product-card">
-          <img src="house2.jpeg" alt="Modern dining table with 6 chairs.">
-          <p>Modern dining table with 6 chairs.</p>
-          <button class="view-btn" data-img="house2.jpeg" data-desc="Modern dining table with 6 chairs.">View</button>
+        <div class="gallery-item" onclick="openModal('house4.jfif', 'Wooden Dining Set')">
+          <img src="house4.jfif" alt="Dining Set">
+          <p>Wooden Dining Set</p>
         </div>
-        <div class="product-card">
-          <img src="house3.jpeg" alt="Stylish bedroom set with nightstands.">
-          <p>Stylish bedroom set with nightstands.</p>
-          <button class="view-btn" data-img="house3.jpeg" data-desc="Stylish bedroom set with nightstands.">View</button>
-        </div>
-        <div class="product-card">
-          <img src="house4.jpeg" alt="Classic coffee table and couch combo.">
-          <p>Classic coffee table and couch combo.</p>
-          <button class="view-btn" data-img="house4.jpeg" data-desc="Classic coffee table and couch combo.">View</button>
-        </div>
-        <div class="product-card">
-          <img src="house5.jpeg" alt="Elegant king-sized bed with storage.">
-          <p>Elegant king-sized bed with storage.</p>
-          <button class="view-btn" data-img="house5.jpeg" data-desc="Elegant king-sized bed with storage.">View</button>
+        <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
+          <img src="house6.jfif" alt="TV Stand">
+          <p>TV Stand and Cabinets</p>
         </div>
       </div>
     </section>
 
-    <!-- Storage Section -->
+    <!-- Storage Units Section -->
     <section>
-      <h2>Storage</h2>
+      <h2>Storage Units</h2>
       <div class="gallery-images">
-        <div class="product-card">
-          <img src="storage1.jpeg" alt="Wooden wardrobe with sliding doors.">
-          <p>Wooden wardrobe with sliding doors.</p>
-          <button class="view-btn" data-img="storage1.jpeg" data-desc="Wooden wardrobe with sliding doors.">View</button>
+        <div class="gallery-item" onclick="openModal('storage1.jpeg', 'Wooden Storage Cabinet')">
+          <img src="storage1.jpeg" alt="Storage 1">
+          <p>Wooden Storage Cabinet</p>
         </div>
-        <div class="product-card">
-          <img src="storage2.jpeg" alt="Bookshelf and cabinet combo.">
-          <p>Bookshelf and cabinet combo.</p>
-          <button class="view-btn" data-img="storage2.jpeg" data-desc="Bookshelf and cabinet combo.">View</button>
+        <div class="gallery-item" onclick="openModal('storage4.jpeg', 'Shelved Bookcase Unit')">
+          <img src="storage4.jpeg" alt="Bookcase">
+          <p>Shelved Bookcase Unit</p>
         </div>
-        <div class="product-card">
-          <img src="storage8.jfif" alt="Minimalist white storage shelves.">
-          <p>Minimalist white storage shelves.</p>
-          <button class="view-btn" data-img="storage8.jfif" data-desc="Minimalist white storage shelves.">View</button>
-        </div>
-        <div class="product-card">
-          <img src="storage9.jfif" alt="Rustic wooden chest of drawers.">
-          <p>Rustic wooden chest of drawers.</p>
-          <button class="view-btn" data-img="storage9.jfif" data-desc="Rustic wooden chest of drawers.">View</button>
-        </div>
-        <div class="product-card">
-          <img src="storage10.jfif" alt="Industrial-style metal storage unit.">
-          <p>Industrial-style metal storage unit.</p>
-          <button class="view-btn" data-img="storage10.jfif" data-desc="Industrial-style metal storage unit.">View</button>
+        <div class="gallery-item" onclick="openModal('storage10.jfif', 'Compact Storage for Living Room')">
+          <img src="storage10.jfif" alt="Compact Storage">
+          <p>Compact Storage for Living Room</p>
         </div>
       </div>
     </section>
 
+    <!-- Call to Action -->
+    <div class="background-section">
+      Discover Comfort & Style with Reayou Furniture — for more info click <a href="contact.html">contact</a>
+    </div>
   </main>
 
   <footer>
     <p>Reayou Furniture LTD | Athi River Devki (Grayland VI)</p>
-    <p>Call: 0715 780 473 | Email: info@reayoufurniture.com</p>
+    <p>Call us: 0715 780 473 | Email: info@reayoufurniture.com</p>
   </footer>
 
-  <!-- Modal -->
-  <div id="modal">
-    <img id="modal-img" src="" alt="Preview">
-    <p id="modal-desc"></p>
-    <button onclick="closeModal()">Close</button>
+  <!-- Modal Structure -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modalImg" src="" alt="">
+      <p id="modalDesc"></p>
+    </div>
   </div>
 
+  <!-- JavaScript -->
   <script>
-    const buttons = document.querySelectorAll('.view-btn');
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    const modalDesc = document.getElementById('modal-desc');
-
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        modalImg.src = btn.getAttribute('data-img');
-        modalDesc.textContent = btn.getAttribute('data-desc');
-        modal.style.display = 'flex';
-      });
-    });
+    function openModal(src, desc) {
+      document.getElementById('modalImg').src = src;
+      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('imageModal').style.display = 'block';
+    }
 
     function closeModal() {
-      modal.style.display = 'none';
+      document.getElementById('imageModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      if (event.target == document.getElementById('imageModal')) {
+        closeModal();
+      }
     }
   </script>
 
