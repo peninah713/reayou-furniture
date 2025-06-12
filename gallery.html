@@ -12,12 +12,6 @@
       padding: 0;
       background-color: #050505;
       color: white;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .dark-mode {
-      background-color: #121212;
-      color: #eaeaea;
     }
 
     nav {
@@ -35,19 +29,6 @@
 
     nav a:hover {
       color: #bbb;
-    }
-
-    .toggle-btn {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      padding: 8px 16px;
-      background-color: #000;
-      color: #fff;
-      border: 1px solid #fff;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
     }
 
     header {
@@ -119,6 +100,21 @@
       margin-top: 10px;
     }
 
+    .product-card .view-btn {
+      margin-top: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .product-card .view-btn:hover {
+      background-color: #218838;
+    }
+
     .background-section {
       margin: 60px 0 40px;
       background-color: #000;
@@ -142,20 +138,9 @@
       text-align: center;
       font-size: 14px;
     }
-
-    @media (max-width: 600px) {
-      .toggle-btn {
-        top: 10px;
-        right: 10px;
-        padding: 6px 10px;
-        font-size: 12px;
-      }
-    }
   </style>
 </head>
 <body>
-
-  <button class="toggle-btn" onclick="toggleMode()">Toggle Dark Mode</button>
 
   <nav>
     <a href="index.html">Home</a>
@@ -175,11 +160,31 @@
       <h2>Office Furniture</h2>
       <p class="section-intro">Explore modern and ergonomic office solutions for every workspace.</p>
       <div class="gallery-images">
-        <div class="product-card"><img src="office1.jpeg" alt=""><p>Executive desk and ergonomic chair set.</p></div>
-        <div class="product-card"><img src="office2.jpeg" alt=""><p>Workstation cubicles with sleek dividers.</p></div>
-        <div class="product-card"><img src="office3.jpeg" alt=""><p>Compact shelving unit with desk combo.</p></div>
-        <div class="product-card"><img src="office4.jpeg" alt=""><p>Open office design with clean layout.</p></div>
-        <div class="product-card"><img src="office5.jpeg" alt=""><p>Large conference table with padded chairs.</p></div>
+        <div class="product-card">
+          <img src="office1.jpeg" alt="">
+          <p>Executive desk and ergonomic chair set.</p>
+          <button class="view-btn">View</button>
+        </div>
+        <div class="product-card">
+          <img src="office2.jpeg" alt="">
+          <p>Workstation cubicles with sleek dividers.</p>
+          <button class="view-btn">View</button>
+        </div>
+        <div class="product-card">
+          <img src="office3.jpeg" alt="">
+          <p>Compact shelving unit with desk combo.</p>
+          <button class="view-btn">View</button>
+        </div>
+        <div class="product-card">
+          <img src="office4.jpeg" alt="">
+          <p>Open office design with clean layout.</p>
+          <button class="view-btn">View</button>
+        </div>
+        <div class="product-card">
+          <img src="office5.jpeg" alt="">
+          <p>Large conference table with padded chairs.</p>
+          <button class="view-btn">View</button>
+        </div>
       </div>
     </section>
 
@@ -188,11 +193,11 @@
       <h2>House Furniture</h2>
       <p class="section-intro">Elegant and comfortable furniture designed for modern homes.</p>
       <div class="gallery-images">
-        <div class="product-card"><img src="house1.jpeg" alt=""><p>Luxury living room sofa set.</p></div>
-        <div class="product-card"><img src="house2.jpeg" alt=""><p>King-sized bed with under-storage.</p></div>
-        <div class="product-card"><img src="house3.jfif" alt=""><p>Contemporary coffee table for lounge areas.</p></div>
-        <div class="product-card"><img src="house4.jfif" alt=""><p>Wooden dining table and chair set.</p></div>
-        <div class="product-card"><img src="house5.jfif" alt=""><p>Minimalist bedroom with subtle accents.</p></div>
+        <div class="product-card"><img src="house1.jpeg" alt=""><p>Luxury living room sofa set.</p><button class="view-btn">View</button></div>
+        <div class="product-card"><img src="house2.jpeg" alt=""><p>King-sized bed with under-storage.</p><button class="view-btn">View</button></div>
+        <div class="product-card"><img src="house3.jfif" alt=""><p>Contemporary coffee table for lounge areas.</p><button class="view-btn">View</button></div>
+        <div class="product-card"><img src="house4.jfif" alt=""><p>Wooden dining table and chair set.</p><button class="view-btn">View</button></div>
+        <div class="product-card"><img src="house5.jfif" alt=""><p>Minimalist bedroom with subtle accents.</p><button class="view-btn">View</button></div>
       </div>
     </section>
 
@@ -201,17 +206,17 @@
       <h2>Storage Units</h2>
       <p class="section-intro">Efficient and stylish storage solutions for home or office.</p>
       <div class="gallery-images">
-        <div class="product-card"><img src="storage1.jpeg" alt=""><p>Classic wooden cabinet with drawers.</p></div>
-        <div class="product-card"><img src="storage2.jpeg" alt=""><p>Compact office drawer cabinet.</p></div>
-        <div class="product-card"><img src="storage3.jpeg" alt=""><p>Industrial-style open storage rack.</p></div>
-        <div class="product-card"><img src="storage4.jpeg" alt=""><p>Tall bookshelf with adjustable shelves.</p></div>
-        <div class="product-card"><img src="storage10.jfif" alt=""><p>Compact cabinet for small spaces.</p></div>
+        <div class="product-card"><img src="storage1.jpeg" alt=""><p>Classic wooden cabinet with drawers.</p><button class="view-btn">View</button></div>
+        <div class="product-card"><img src="storage2.jpeg" alt=""><p>Compact office drawer cabinet.</p><button class="view-btn">View</button></div>
+        <div class="product-card"><img src="storage3.jpeg" alt=""><p>Industrial-style open storage rack.</p><button class="view-btn">View</button></div>
+        <div class="product-card"><img src="storage4.jpeg" alt=""><p>Tall bookshelf with adjustable shelves.</p><button class="view-btn">View</button></div>
+        <div class="product-card"><img src="storage10.jfif" alt=""><p>Compact cabinet for small spaces.</p><button class="view-btn">View</button></div>
       </div>
     </section>
 
     <!-- Call to Action -->
     <div class="background-section">
-      Discover Comfort & Style with Reayou Furniture — for more info click <a href="contact.html">contact</a>
+      Discover Comfort & Style with Reayou Furniture — for more info click <a href="contact.html">contact us</a>
     </div>
 
   </main>
@@ -221,10 +226,5 @@
     <p>Call us: 0715 780 473 | Email: info@reayoufurniture.com</p>
   </footer>
 
-  <script>
-    function toggleMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-  </script>
 </body>
 </html>
