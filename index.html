@@ -1,176 +1,313 @@
-<style>
-  body {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-  }
-
-  nav {
-    background-color: #111;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    border-bottom: 1px solid #333;
-  }
-
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-
-  nav a:hover {
-    text-decoration: underline;
-  }
-
-  header {
-    text-align: center;
-    padding: 40px 20px;
-    border-bottom: 1px solid #333;
-  }
-
-  header h1 {
-    margin: 0;
-    font-size: 2.5em;
-  }
-
-  main {
-    padding: 40px 5%;
-  }
-
-  section {
-    margin-bottom: 60px;
-  }
-
-  section h2 {
-    font-size: 2em;
-    margin-bottom: 25px;
-    border-left: 5px solid #fff;
-    padding-left: 15px;
-  }
-
-  .gallery-images {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
-  }
-
-  .product-card {
-    background-color: #1a1a1a;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.1);
-  }
-
-  .product-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 12px;
-  }
-
-  .product-card p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    color: #ccc;
-  }
-
-  .view-btn {
-    background-color: #fff;
-    color: #000;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .view-btn:hover {
-    background-color: #444;
-    color: #fff;
-  }
-
-  footer {
-    background-color: #000;
-    padding: 30px;
-    text-align: center;
-    border-top: 1px solid #333;
-    font-size: 0.95em;
-    color: #aaa;
-  }
-
-  /* Modal */
-  #modal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    color: white;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 1000;
-    padding: 20px;
-  }
-
-  #modal img {
-    max-width: 90%;
-    max-height: 60vh;
-    border-radius: 10px;
-  }
-
-  #modal-desc {
-    margin-top: 15px;
-    color: #ddd;
-    text-align: center;
-    max-width: 80%;
-    font-size: 1.1rem;
-  }
-
-  #modal button {
-    margin-top: 25px;
-    padding: 12px 24px;
-    background: #fff;
-    color: #000;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-
-  #modal button:hover {
-    background-color: #444;
-    color: #fff;
-  }
-
-  @media (max-width: 600px) {
-    nav {
-      flex-direction: column;
-      gap: 15px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Reayou Furniture - Premium Office Furniture Solutions. Elevate your workspace with executive desks, workstations, and conference tables.">
+  <meta name="keywords" content="office furniture, executive desks, conference tables, workstations, Reayou">
+  <meta name="author" content="Reayou Furniture">
+  <title>Reayou Furniture | Premium Office Furniture</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    header h1 {
-      font-size: 2em;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      line-height: 1.6;
+      background-color: #000;
     }
 
-    section h2 {
-      font-size: 1.5em;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    .product-card img {
-      height: 160px;
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #000;
+      padding: 15px 0;
+      z-index: 1000;
+      border-bottom: 1px solid #444;
     }
-  }
-</style>
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #f0f0f0;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ddd;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url("back6.jfif") no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 100px;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .btn {
+      background-color: #fff;
+      color: #000;
+      padding: 14px 28px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background-color: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+
+    .features, .products {
+      padding: 80px 20px;
+    }
+
+    .features {
+      background-color: #111;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 2px;
+      background: #fff;
+      display: block;
+      margin: 15px auto;
+    }
+
+    .features-grid, .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background-color: #1a1a1a;
+      padding: 30px;
+      border: 1px solid #333;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .feature-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    .products {
+      background-color: #f9f9f9;
+      color: #000;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product-info h3 {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .product-info p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      background-color: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+    }
+
+    .footer a {
+      color: #ccc;
+      transition: color 0.3s;
+    }
+
+    .footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">REAYOU</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="about.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Premium Office Furniture Solutions</h1>
+      <p>We craft high-end office furniture tailored to elevate your professional space with style, function, and comfort.</p>
+      <a href="gallery.html" class="btn">Explore Our Collection</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <h2 class="section-title">Why Choose Reayou</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">✨</div>
+        <h3>Premium Quality</h3>
+        <p>Crafted using top-tier materials to ensure durability, style, and performance in every product.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛠️</div>
+        <h3>Custom Designs</h3>
+        <p>Tailored solutions to meet your exact workspace needs, blending form and function seamlessly.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🚚</div>
+        <h3>Reliable Delivery</h3>
+        <p>Efficient timelines and trusted logistics to ensure your furniture arrives on schedule, every time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products">
+    <h2 class="section-title">Our Collections</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="conference.jfif" alt="Conference Table" class="product-image">
+        <div class="product-info">
+          <h3>Conference Tables</h3>
+          <p>Make meetings impactful with beautifully crafted tables.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="office desk.jfif" alt="Executive Desk" class="product-image">
+        <div class="product-info">
+          <h3>Executive Desks</h3>
+          <p>Impose leadership with elegant and commanding designs.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="workstation.jfif" alt="Workstations" class="product-image">
+        <div class="product-info">
+          <h3>Office Workstations</h3>
+          <p>Organized, modular setups for high-performance teams.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Reayou Furniture. All rights reserved.</p>
+    <p><a href="tel:+254704088883">0704 088 883</a> | <a href="mailto:furniturereayou@gmail.com">furniturereayou@gmail.com</a></p>
+    <p>Visit us: Athi River, Devki 9 (Grayland VI), Kenya</p>
+  </footer>
+
+</body>
+</html>
