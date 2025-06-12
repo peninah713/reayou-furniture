@@ -225,6 +225,23 @@
     <p>Reayou Furniture LTD | Athi River Devki (Grayland VI)</p>
     <p>Call us: 0715 780 473 | Email: info@reayoufurniture.com</p>
   </footer>
+ <script>
+    const viewButtons = document.querySelectorAll('.view-btn');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalDesc = document.getElementById('modal-desc');
 
+    viewButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        modalImg.src = button.getAttribute('data-img');
+        modalDesc.textContent = button.getAttribute('data-desc');
+        modal.style.display = 'flex';
+      });
+    });
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+  </script>
 </body>
 </html>
