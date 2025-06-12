@@ -5,10 +5,6 @@
   <title>Gallery - Reayou Furniture LTD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -20,68 +16,19 @@
 
     nav {
       background-color: #181717;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 12px 0;
+      text-align: center;
     }
 
-    .logo {
-      font-weight: bold;
-      font-size: 1.3em;
-      color: #fff;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links a {
+    nav a {
       color: white;
+      margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
     }
 
-    .nav-links a:hover {
+    nav a:hover {
       color: #bbb;
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .menu-toggle div {
-      background: white;
-      height: 3px;
-      width: 25px;
-      margin: 4px 0;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #181717;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 15px;
-        border-radius: 5px;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
     }
 
     header {
@@ -141,6 +88,22 @@
       font-size: 0.95em;
     }
 
+    .background-section {
+      margin: 60px 0 40px;
+      background-color: #000;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: 500;
+    }
+
+    .background-section a {
+      color: #1a6b3e;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
     footer {
       background-color: rgb(12, 12, 12);
       color: rgb(238, 233, 233);
@@ -149,6 +112,7 @@
       font-size: 14px;
     }
 
+    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -201,127 +165,169 @@
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav>
-    <div class="logo">Reayou Furniture</div>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact Us</a>
-    </div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact Us</a>
   </nav>
 
-  <!-- Header -->
   <header>
     <h1>Our Gallery</h1>
   </header>
 
-  <!-- Main Content -->
   <main>
+    <!-- Office Furniture Section -->
     <section>
       <h2>Office Furniture</h2>
       <div class="gallery-images">
-        <div class="gallery-item" onclick="openModal('office1.jpeg', 'Office Desk Setup')">
-          <img src="office1.jpeg" alt="Office Desk Setup">
-          <p>Office Desk Setup</p>
+        <div class="gallery-item" onclick="openModal('office1.jpeg', 'Modern Office Desk and Chair')">
+          <img src="office1.jpeg" alt="Office 1">
+          <p>Modern Office Desk and Chair</p>
         </div>
-        <div class="gallery-item" onclick="openModal('office2.jpeg', 'Office Workspace')">
-          <img src="office2.jpeg" alt="Office Workspace">
-          <p>Office Workspace</p>
+        <div class="gallery-item" onclick="openModal('office2.jpeg', 'Office Workstation Setup')">
+          <img src="office2.jpeg" alt="Office 2">
+          <p>Office Workstation Setup</p>
         </div>
-        <div class="gallery-item" onclick="openModal('office3.jpeg', 'Executive Office')">
-          <img src="office3.jpeg" alt="Executive Office">
-          <p>Executive Office</p>
-        </div>
-        <div class="gallery-item" onclick="openModal('conference.jfif', 'Conference Table')">
+        <div class="gallery-item" onclick="openModal('conference.jfif', 'Conference Table and Chairs')">
           <img src="conference.jfif" alt="Conference Table">
-          <p>Conference Table</p>
+          <p>Conference Table and Chairs</p>
+        </div>
+         <div class="gallery-item" onclick="openModal('office3.jpeg', 'Conference Table and Chairs')">
+          <img src="office3.jpeg" alt="Conference Table">
+          <p>managers table and Chairs</p>
+        </div>
+         <div class="gallery-item" onclick="openModal('office4.jpeg', 'Conference Table and Chairs')">
+          <img src="office4.jpeg" alt="Conference Table">
+          <p>work setup Table and Chairs</p>
+        </div>
+         <div class="gallery-item" onclick="openModal('office5.jpeg', 'Conference Table and Chairs')">
+          <img src="office5.jpeg" alt="Conference Table">
+          <p>egonomic office Chairs</p>
+        </div>
+         <div class="gallery-item" onclick="openModal('conference.jfif', 'Conference Table and Chairs')">
+          <img src="office9.jfif" alt="Conference Table">
+          <p>Comfortable office Chairs</p>
+        </div>
+         <div class="gallery-item" onclick="openModal('conference.jfif', 'Conference Table and Chairs')">
+          <img src="office8.jfif" alt="Conference Table">
+          <p>Comfy office chair</p>
+        </div>
+         <div class="gallery-item" onclick="openModal('conference.jfif', 'Conference Table and Chairs')">
+          <img src="office desk.jfif" alt="Conference Table">
+          <p>Conference Table and Chairs</p>
+        </div>
+         <div class="gallery-item" onclick="openModal('conference.jfif', 'Conference Table and Chairs')">
+          <img src="office1.jfif" alt="Conference Table">
+          <p>egonomic offiice chair and desk</p>
         </div>
       </div>
     </section>
 
+    <!-- House Furniture Section -->
     <section>
       <h2>House Furniture</h2>
       <div class="gallery-images">
-        <div class="gallery-item" onclick="openModal('house3.jfif', 'Living Room Set')">
-          <img src="house3.jfif" alt="Living Room Set">
-          <p>Living Room Set</p>
+        <div class="gallery-item" onclick="openModal('house1.jpeg', 'Cozy Living Room Sofa')">
+          <img src="house3.jfif" alt="House Sofa">
+          <p>Cozy Living Room Sofa</p>
         </div>
-        <div class="gallery-item" onclick="openModal('house4.jfif', 'Wooden Sofa Set')">
-          <img src="house4.jfif" alt="Wooden Sofa Set">
-          <p>Wooden Sofa Set</p>
+        <div class="gallery-item" onclick="openModal('house4.jfif', 'Wooden Dining Set')">
+          <img src="house4.jfif" alt="Dining Set">
+          <p>Wooden Dining Set</p>
         </div>
-        <div class="gallery-item" onclick="openModal('house5.jfif', 'Classic Couch')">
-          <img src="house5.jfif" alt="Classic Couch">
-          <p>Classic Couch</p>
+        <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
+          <img src="house8.jfif" alt="TV Stand">
+          <p>TV Stand and Cabinets</p>
         </div>
-        <div class="gallery-item" onclick="openModal('house6.jfif', 'Modern Sofa')">
-          <img src="house6.jfif" alt="Modern Sofa">
-          <p>Modern Sofa</p>
+        <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
+          <img src="house6.jfif" alt="TV Stand">
+          <p>classy Cabinets</p>
+        </div>
+        <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
+          <img src="storage11.jfif" alt="TV Stand">
+          <p> make up Cabinets</p>
+        </div>
+        <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
+          <img src="house9.jfif" alt="TV Stand">
+          <p>TV Stand and Cabinets</p>
+        </div>
+        <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
+          <img src="house10.jfif" alt="TV Stand">
+          <p>TV Stand and Cabinets</p>
+        </div>
+        <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
+          <img src="house11.jfif" alt="TV Stand">
+          <p>dinning chairs and table</p>
+        </div>
+         <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
+          <img src="back4.jfif" alt="TV Stand">
+          <p>kitchen cabinets</p>
+        </div>
+         <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
+          <img src="house1.jpeg" alt="TV Stand">
+          <p>living room table</p>
         </div>
       </div>
     </section>
 
+    <!-- Storage Units Section -->
     <section>
       <h2>Storage Units</h2>
       <div class="gallery-images">
         <div class="gallery-item" onclick="openModal('storage1.jpeg', 'Wooden Storage Cabinet')">
-          <img src="storage1.jpeg" alt="Wooden Storage Cabinet">
+          <img src="storage1.jpeg" alt="Storage 1">
           <p>Wooden Storage Cabinet</p>
         </div>
-        <div class="gallery-item" onclick="openModal('storage2.jpeg', 'Filing Cabinet')">
-          <img src="storage2.jpeg" alt="Filing Cabinet">
-          <p>Filing Cabinet</p>
+        <div class="gallery-item" onclick="openModal('storage4.jpeg', 'Shelved Bookcase Unit')">
+          <img src="storage4.jpeg" alt="Bookcase">
+          <p>Shelved Bookcase Unit</p>
         </div>
-        <div class="gallery-item" onclick="openModal('storage3.jpeg', 'Bookshelf Storage')">
-          <img src="storage3.jpeg" alt="Bookshelf Storage">
-          <p>Bookshelf Storage</p>
-        </div>
-        <div class="gallery-item" onclick="openModal('storage4.jpeg', 'Closed Storage Unit')">
-          <img src="storage4.jpeg" alt="Closed Storage Unit">
-          <p>Closed Storage Unit</p>
+        <div class="gallery-item" onclick="openModal('storage10.jfif', 'Compact Storage for Living Room')">
+          <img src="storage10.jfif" alt="Compact Storage">
+          <p>Compact Storage for Living Room</p>
         </div>
       </div>
     </section>
+
+    <!-- Call to Action -->
+    <div class="background-section">
+      Discover Comfort & Style with Reayou Furniture — for more info click <a href="contact.html">contact</a>
+    </div>
   </main>
 
-  <!-- Footer -->
   <footer>
-    &copy; 2025 Reayou Furniture LTD. All rights reserved.
+    <p>Reayou Furniture LTD | Athi River Devki (Grayland VI)</p>
+    <p>Call us: 0715 780 473 | Email: info@reayoufurniture.com</p>
   </footer>
 
-  <!-- Modal -->
-  <div id="myModal" class="modal">
+  <!-- Modal Structure -->
+  <div id="imageModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
       <img id="modalImg" src="" alt="">
-      <p id="modalCaption"></p>
+      <p id="modalDesc"></p>
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- JavaScript -->
   <script>
-    function openModal(imageSrc, caption) {
-      document.getElementById('myModal').style.display = "block";
-      document.getElementById('modalImg').src = imageSrc;
-      document.getElementById('modalCaption').innerText = caption;
+    function openModal(src, desc) {
+      document.getElementById('modalImg').src = src;
+      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('imageModal').style.display = 'block';
     }
 
     function closeModal() {
-      document.getElementById('myModal').style.display = "none";
+      document.getElementById('imageModal').style.display = 'none';
     }
 
-    function toggleMenu() {
-      const navLinks = document.getElementById('navLinks');
-      navLinks.classList.toggle('active');
+    window.onclick = function(event) {
+      if (event.target == document.getElementById('imageModal')) {
+        closeModal();
+      }
     }
   </script>
 
 </body>
-</html>
+</html> is this proffesional and i want the nav bar to be contanst even when one sroll up and down
