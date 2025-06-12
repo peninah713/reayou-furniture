@@ -5,75 +5,62 @@
   <title>Contact Us - Reayou Furniture LTD</title>
   <style>
     :root {
-      --primary-color: #fff;
-      --background-color: #000;
-      --text-color: #fff;
+      --background: #000;
+      --text: #fff;
+      --primary: #fff;
+      --whatsapp-bg: #25d366;
+      --whatsapp-hover: #1ebe5d;
+      --gray: #111;
+      --light-gray: #ccc;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body, html {
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--background-color);
-      color: var(--text-color);
+      background: var(--background);
+      color: var(--text);
       line-height: 1.6;
     }
 
     nav {
-      background-color: #111;
-      padding: 15px;
+      background: var(--gray);
       text-align: center;
+      padding: 15px;
     }
 
     nav a {
-      color: white;
+      color: var(--text);
       margin: 0 20px;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: #999;
-    }
+    nav a:hover { color: var(--light-gray); }
 
     header {
       text-align: center;
-      padding: 50px 20px 20px;
-      background-image: url("ppp.jfif");
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      text-shadow: 1px 1px 3px #000;
+      padding: 50px 20px;
+      background: url("ppp.jfif") center/cover no-repeat;
     }
 
-    header h1 {
-      font-size: 2.5em;
-    }
+    header h1 { font-size: 2.5em; text-shadow: 1px 1px 3px #000; }
 
     .container {
       max-width: 800px;
       margin: 20px auto;
-      background-color: #111;
+      background: var(--gray);
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
     }
 
     h2 {
-      color: var(--primary-color);
       text-align: center;
+      color: var(--light-gray);
       margin-bottom: 25px;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-    }
+    form { display: flex; flex-direction: column; }
 
     label {
       margin-top: 15px;
@@ -84,7 +71,7 @@
       padding: 12px;
       margin-top: 5px;
       background: #222;
-      color: #fff;
+      color: var(--text);
       border: 1px solid #444;
       border-radius: 5px;
     }
@@ -92,51 +79,37 @@
     button {
       margin-top: 20px;
       padding: 12px;
-      background-color: #fff;
+      background: var(--primary);
       color: #000;
       font-weight: bold;
+      cursor: pointer;
       border: none;
       border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s;
     }
 
-    button:hover {
-      background-color: #ddd;
-    }
+    button:hover { background: #ddd; }
 
     .whatsapp-btn {
       display: block;
-      margin: 20px auto 0;
+      margin: 20px auto;
       padding: 12px 25px;
-      background-color: #25d366;
-      color: white;
+      background: var(--whatsapp-bg);
+      color: var(--text);
       text-align: center;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s;
     }
 
-    .whatsapp-btn:hover {
-      background-color: #1ebe5d;
-    }
-
-    .thank-you {
-      margin-top: 20px;
-      background-color: #222;
-      padding: 15px;
-      border-radius: 5px;
-      text-align: center;
-      color: #0f0;
-      font-weight: bold;
-    }
+    .whatsapp-btn:hover { background: var(--whatsapp-hover); }
 
     footer {
-      background-color: #111;
-      padding: 40px 20px 20px;
+      background: var(--gray);
+      padding: 40px 20px;
       text-align: center;
-      color: #ccc;
+      color: var(--light-gray);
     }
 
     .contact-info-footer p {
@@ -153,19 +126,9 @@
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8em;
-      }
-
-      nav a {
-        display: block;
-        margin: 10px 0;
-      }
-
-      .container {
-        margin: 10px;
-        padding: 20px;
-      }
+      header h1 { font-size: 1.8em; }
+      nav a { display: block; margin: 10px 0; }
+      .container { margin: 10px; padding: 20px; }
     }
   </style>
 </head>
@@ -184,7 +147,7 @@
 
 <div class="container">
   <h2>Get In Touch</h2>
-  <form>
+  <form id="contactForm">
     <label for="name">Your Name</label>
     <input type="text" id="name" placeholder="Enter your name" required>
 
@@ -197,16 +160,9 @@
     <button type="submit">Send Message</button>
   </form>
 
-  <!-- Thank You Message (static example) -->
-  <div class="thank-you">
-    Thank you for reaching out to us. We will get back to you shortly!
-  </div>
-
-  <!-- WhatsApp Buttons -->
   <a href="https://wa.me/254743902529" target="_blank" class="whatsapp-btn">
     📱 Chat on WhatsApp: 0743 902 529
   </a>
-
   <a href="https://wa.me/254721567890" target="_blank" class="whatsapp-btn">
     📱 Chat on WhatsApp: 0721 567 890
   </a>
@@ -220,14 +176,21 @@
     <p><strong>Email:</strong> info@reayoufurniture.com</p>
   </div>
 
-  <!-- Google Maps Embed -->
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.744473873404!2d37.009!3d-1.448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3d6a60f7c8db%3A0x8f0f3d3b52e9db3!2sGrayland%20VI%2C%20Athi%20River!5e0!3m2!1sen!2ske!4v1685307284900!5m2"
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.726435798092!2d37.00938061460908!3d-1.4481141989977411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3d6a60f7c8db%3A0x8f0f3d3b52e9db3!2sGrayland%20VI%2C%20Athi%20River!5e0!3m2!1sen!2ske!4v1685307284900!5m2!1sen!2ske"
     allowfullscreen=""
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade">
   </iframe>
 </footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('Thank you for your message! We will get back to you shortly.');
+    this.reset();
+  });
+</script>
 
 </body>
 </html>
