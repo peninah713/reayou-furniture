@@ -2,141 +2,179 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gallery - Reayou Furniture LTD</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reayou Furniture Gallery</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
       margin: 0;
       padding: 0;
-      background-color: #050505;
-      color: white;
     }
 
     nav {
-      background-color: #181717;
-      padding: 12px 0;
-      text-align: center;
+      background-color: #111;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
     }
 
     nav a {
-      color: white;
-      margin: 0 20px;
+      color: #fff;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #bbb;
+      color: #f39c12;
     }
 
     header {
-      background-image: url("back2.jfif");
-      background-size: cover;
-      background-position: center;
-      color: white;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      padding: 40px 20px;
+      text-align: center;
+      background: #222;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #f39c12;
     }
 
     main {
-      max-width: 1200px;
-      margin: 40px auto;
       padding: 20px;
     }
 
+    section {
+      margin-bottom: 60px;
+    }
+
     section h2 {
-      margin-bottom: 10px;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 1.6em;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
+      color: #f39c12;
+      font-size: 2em;
+      margin-bottom: 5px;
     }
 
     .section-intro {
-      text-align: center;
+      font-size: 1.1em;
+      margin-bottom: 20px;
       color: #ccc;
-      font-style: italic;
-      margin-bottom: 25px;
-      font-size: 15px;
     }
 
     .gallery-images {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 20px;
     }
 
     .product-card {
-      background-color: #1a1a1a;
+      background-color: #111;
       border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      padding: 15px;
+      width: 260px;
       text-align: center;
-      padding: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .product-card:hover {
-      transform: scale(1.02);
+      box-shadow: 0 0 10px #111;
     }
 
     .product-card img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
+      border-radius: 10px;
     }
 
     .product-card p {
-      font-size: 14px;
-      color: #ccc;
-      margin-top: 10px;
+      color: #ddd;
+      margin: 10px 0;
     }
 
-    .product-card .view-btn {
-      margin-top: 10px;
-      background-color: #28a745;
-      color: white;
-      border: none;
+    .view-btn {
       padding: 8px 16px;
+      background-color: #f39c12;
+      border: none;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 14px;
+      color: #000;
+      font-weight: bold;
     }
 
-    .product-card .view-btn:hover {
-      background-color: #218838;
+    .view-btn:hover {
+      background-color: #d35400;
     }
 
     .background-section {
-      margin: 60px 0 40px;
-      background-color: #000;
-      color: white;
-      padding: 50px 20px;
+      margin: 60px 0;
+      padding: 40px 20px;
+      background: #1a1a1a;
       text-align: center;
-      font-size: 1.8em;
-      font-weight: 500;
+      font-size: 1.2em;
+      border-top: 2px solid #f39c12;
+      border-bottom: 2px solid #f39c12;
     }
 
     .background-section a {
-      color: #1a6b3e;
-      font-weight: bold;
+      color: #f39c12;
       text-decoration: underline;
     }
 
     footer {
-      background-color: rgb(12, 12, 12);
-      color: rgb(238, 233, 233);
-      padding: 30px 20px;
+      background-color: #111;
       text-align: center;
-      font-size: 14px;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #bbb;
+    }
+
+    /* Modal styles */
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      color: white;
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    #modal img {
+      max-width: 90%;
+      max-height: 60vh;
+      border-radius: 10px;
+    }
+
+    #modal-desc {
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #ccc;
+      text-align: center;
+    }
+
+    #modal button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #e74c3c;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #modal button:hover {
+      background: #c0392b;
+    }
+
+    @media screen and (max-width: 600px) {
+      .gallery-images {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -163,27 +201,12 @@
         <div class="product-card">
           <img src="office1.jpeg" alt="">
           <p>Executive desk and ergonomic chair set.</p>
-          <button class="view-btn">View</button>
+          <button class="view-btn" data-img="office1.jpeg" data-desc="Executive desk and ergonomic chair set.">View</button>
         </div>
         <div class="product-card">
           <img src="office2.jpeg" alt="">
           <p>Workstation cubicles with sleek dividers.</p>
-          <button class="view-btn">View</button>
-        </div>
-        <div class="product-card">
-          <img src="office3.jpeg" alt="">
-          <p>Compact shelving unit with desk combo.</p>
-          <button class="view-btn">View</button>
-        </div>
-        <div class="product-card">
-          <img src="office4.jpeg" alt="">
-          <p>Open office design with clean layout.</p>
-          <button class="view-btn">View</button>
-        </div>
-        <div class="product-card">
-          <img src="office5.jpeg" alt="">
-          <p>Large conference table with padded chairs.</p>
-          <button class="view-btn">View</button>
+          <button class="view-btn" data-img="office2.jpeg" data-desc="Workstation cubicles with sleek dividers.">View</button>
         </div>
       </div>
     </section>
@@ -193,30 +216,39 @@
       <h2>House Furniture</h2>
       <p class="section-intro">Elegant and comfortable furniture designed for modern homes.</p>
       <div class="gallery-images">
-        <div class="product-card"><img src="house1.jpeg" alt=""><p>Luxury living room sofa set.</p><button class="view-btn">View</button></div>
-        <div class="product-card"><img src="house2.jpeg" alt=""><p>King-sized bed with under-storage.</p><button class="view-btn">View</button></div>
-        <div class="product-card"><img src="house3.jfif" alt=""><p>Contemporary coffee table for lounge areas.</p><button class="view-btn">View</button></div>
-        <div class="product-card"><img src="house4.jfif" alt=""><p>Wooden dining table and chair set.</p><button class="view-btn">View</button></div>
-        <div class="product-card"><img src="house5.jfif" alt=""><p>Minimalist bedroom with subtle accents.</p><button class="view-btn">View</button></div>
+        <div class="product-card">
+          <img src="house1.jpeg" alt="">
+          <p>Luxury living room sofa set.</p>
+          <button class="view-btn" data-img="house1.jpeg" data-desc="Luxury living room sofa set.">View</button>
+        </div>
+        <div class="product-card">
+          <img src="house2.jpeg" alt="">
+          <p>Modern dining table with 6 chairs.</p>
+          <button class="view-btn" data-img="house2.jpeg" data-desc="Modern dining table with 6 chairs.">View</button>
+        </div>
       </div>
     </section>
 
-    <!-- Storage Units Section -->
+    <!-- Storage Section -->
     <section>
-      <h2>Storage Units</h2>
-      <p class="section-intro">Efficient and stylish storage solutions for home or office.</p>
+      <h2>Storage Solutions</h2>
+      <p class="section-intro">Stylish and practical storage options for every room.</p>
       <div class="gallery-images">
-        <div class="product-card"><img src="storage1.jpeg" alt=""><p>Classic wooden cabinet with drawers.</p><button class="view-btn">View</button></div>
-        <div class="product-card"><img src="storage2.jpeg" alt=""><p>Compact office drawer cabinet.</p><button class="view-btn">View</button></div>
-        <div class="product-card"><img src="storage3.jpeg" alt=""><p>Industrial-style open storage rack.</p><button class="view-btn">View</button></div>
-        <div class="product-card"><img src="storage4.jpeg" alt=""><p>Tall bookshelf with adjustable shelves.</p><button class="view-btn">View</button></div>
-        <div class="product-card"><img src="storage10.jfif" alt=""><p>Compact cabinet for small spaces.</p><button class="view-btn">View</button></div>
+        <div class="product-card">
+          <img src="storage1.jpeg" alt="">
+          <p>Wooden wardrobe with sliding doors.</p>
+          <button class="view-btn" data-img="storage1.jpeg" data-desc="Wooden wardrobe with sliding doors.">View</button>
+        </div>
+        <div class="product-card">
+          <img src="storage2.jpeg" alt="">
+          <p>Bookshelf and cabinet combo.</p>
+          <button class="view-btn" data-img="storage2.jpeg" data-desc="Bookshelf and cabinet combo.">View</button>
+        </div>
       </div>
     </section>
 
-    <!-- Call to Action -->
     <div class="background-section">
-      Discover Comfort & Style with Reayou Furniture — for more info click <a href="contact.html">contact us</a>
+      Discover Comfort & Style with Reayou Furniture — for more info click <a href="contact.html">contact</a>
     </div>
 
   </main>
@@ -225,7 +257,15 @@
     <p>Reayou Furniture LTD | Athi River Devki (Grayland VI)</p>
     <p>Call us: 0715 780 473 | Email: info@reayoufurniture.com</p>
   </footer>
- <script>
+
+  <!-- Modal -->
+  <div id="modal">
+    <img id="modal-img" src="" alt="product">
+    <p id="modal-desc"></p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+
+  <script>
     const viewButtons = document.querySelectorAll('.view-btn');
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modal-img');
@@ -243,5 +283,6 @@
       modal.style.display = 'none';
     }
   </script>
+
 </body>
 </html>
