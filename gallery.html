@@ -70,12 +70,20 @@
     }
 
     section h2 {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       text-align: center;
       text-transform: uppercase;
       font-size: 1.6em;
       border-bottom: 2px solid #ccc;
       padding-bottom: 10px;
+    }
+
+    .section-intro {
+      text-align: center;
+      color: #ccc;
+      font-style: italic;
+      margin-bottom: 25px;
+      font-size: 15px;
     }
 
     .gallery-images {
@@ -84,17 +92,31 @@
       gap: 20px;
     }
 
-    .gallery-images img {
+    .product-card {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-align: center;
+      padding: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: scale(1.02);
+    }
+
+    .product-card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
       border-radius: 8px;
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .gallery-images img:hover {
-      transform: scale(1.03);
+    .product-card p {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 10px;
     }
 
     .background-section {
@@ -133,7 +155,8 @@
 </head>
 <body>
 
-  
+  <button class="toggle-btn" onclick="toggleMode()">Toggle Dark Mode</button>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
@@ -146,56 +169,43 @@
   </header>
 
   <main>
+
     <!-- Office Furniture Section -->
     <section>
       <h2>Office Furniture</h2>
+      <p class="section-intro">Explore modern and ergonomic office solutions for every workspace.</p>
       <div class="gallery-images">
-        <img src="office1.jpeg" alt="Modern Office Desk and Chair">
-        <img src="office2.jpeg" alt="Office Workstation Setup">
-        <img src="office3.jpeg" alt="Office Furniture with Shelving">
-        <img src="office4.jpeg" alt="Corporate Office Setup">
-        <img src="office5.jpeg" alt="Conference Table and Chairs">
-        <img src="office6.jpeg" alt="Ergonomic Office Seating">
-        <img src="workstation.jfif" alt="Ergonomic Office Seating">
-        <img src="office desk.jfif" alt="Ergonomic Office Seating">
-        <img src="conference.jfif" alt="Ergonomic Office Seating">
-         <img src="office6.jpeg" alt="Ergonomic Office Seating">
-        
+        <div class="product-card"><img src="office1.jpeg" alt=""><p>Executive desk and ergonomic chair set.</p></div>
+        <div class="product-card"><img src="office2.jpeg" alt=""><p>Workstation cubicles with sleek dividers.</p></div>
+        <div class="product-card"><img src="office3.jpeg" alt=""><p>Compact shelving unit with desk combo.</p></div>
+        <div class="product-card"><img src="office4.jpeg" alt=""><p>Open office design with clean layout.</p></div>
+        <div class="product-card"><img src="office5.jpeg" alt=""><p>Large conference table with padded chairs.</p></div>
       </div>
     </section>
 
     <!-- House Furniture Section -->
     <section>
       <h2>House Furniture</h2>
+      <p class="section-intro">Elegant and comfortable furniture designed for modern homes.</p>
       <div class="gallery-images">
-        <img src="house1.jpeg" alt="Cozy Living Room Sofa">
-        <img src="house2.jpeg" alt="Modern Bed Design">
-        <img src="house3.jfif" alt="Stylish Coffee Table">
-        <img src="house4.jfif" alt="Wooden Dining Set">
-        <img src="house5.jfif" alt="Minimalist Interior Decor">
-        <img src="house6.jfif" alt="TV Stand and Cabinets">
-        <img src="house7.jfif" alt="Wardrobe with Sliding Doors">
-        <img src="house8.jfif" alt="Elegant Bedroom Setup">
-        <img src="p2.jfif" alt="Elegant Bedroom Setup">
-        <img src="p3.jfif" alt="Elegant Bedroom Setup">
-       
+        <div class="product-card"><img src="house1.jpeg" alt=""><p>Luxury living room sofa set.</p></div>
+        <div class="product-card"><img src="house2.jpeg" alt=""><p>King-sized bed with under-storage.</p></div>
+        <div class="product-card"><img src="house3.jfif" alt=""><p>Contemporary coffee table for lounge areas.</p></div>
+        <div class="product-card"><img src="house4.jfif" alt=""><p>Wooden dining table and chair set.</p></div>
+        <div class="product-card"><img src="house5.jfif" alt=""><p>Minimalist bedroom with subtle accents.</p></div>
       </div>
     </section>
 
     <!-- Storage Units Section -->
     <section>
       <h2>Storage Units</h2>
+      <p class="section-intro">Efficient and stylish storage solutions for home or office.</p>
       <div class="gallery-images">
-        <img src="storage1.jpeg" alt="Wooden Storage Cabinet">
-        <img src="storage2.jpeg" alt="Drawer Cabinet for Home Office">
-        <img src="storage3.jpeg" alt="Industrial Storage Unit">
-        <img src="storage4.jpeg" alt="Shelved Bookcase Unit">
-        <img src="storage10.jfif" alt="Compact Storage for Living Room">
-        <img src="storage6.jpeg" alt="Metallic Storage Rack">
-         <img src="storage7.jpeg" alt="Metallic Storage Rack">
-          <img src="pk.webp" alt="Metallic Storage Rack">
-           <img src="storage8.jfif" alt="Metallic Storage Rack">
-            <img src="storage9.jfif" alt="Metallic Storage Rack">
+        <div class="product-card"><img src="storage1.jpeg" alt=""><p>Classic wooden cabinet with drawers.</p></div>
+        <div class="product-card"><img src="storage2.jpeg" alt=""><p>Compact office drawer cabinet.</p></div>
+        <div class="product-card"><img src="storage3.jpeg" alt=""><p>Industrial-style open storage rack.</p></div>
+        <div class="product-card"><img src="storage4.jpeg" alt=""><p>Tall bookshelf with adjustable shelves.</p></div>
+        <div class="product-card"><img src="storage10.jfif" alt=""><p>Compact cabinet for small spaces.</p></div>
       </div>
     </section>
 
@@ -203,6 +213,7 @@
     <div class="background-section">
       Discover Comfort & Style with Reayou Furniture — for more info click <a href="contact.html">contact</a>
     </div>
+
   </main>
 
   <footer>
@@ -212,7 +223,7 @@
 
   <script>
     function toggleMode() {
-      document.body.classList.toggle('light-mode');
+      document.body.classList.toggle('dark-mode');
     }
   </script>
 </body>
