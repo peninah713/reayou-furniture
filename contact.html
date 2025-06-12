@@ -5,11 +5,9 @@
   <title>Contact Us - Reayou Furniture LTD</title>
   <style>
     :root {
-      --accent-color: #28a745; /* minimal green */
+      --primary-color: #ccc;
       --background-color: #000;
       --text-color: #fff;
-      --light-gray: #ccc;
-      --dark-gray: #111;
     }
 
     * {
@@ -26,7 +24,7 @@
     }
 
     nav {
-      background-color: var(--dark-gray);
+      background-color: #111;
       padding: 15px;
       text-align: center;
     }
@@ -40,7 +38,7 @@
     }
 
     nav a:hover {
-      color: var(--accent-color);
+      color: var(--primary-color);
     }
 
     header {
@@ -49,7 +47,7 @@
       background-image: url("ppp.jfif");
       background-size: cover;
       background-position: center;
-      color: #fff;
+      color: white;
     }
 
     header h1 {
@@ -61,14 +59,14 @@
     .container {
       max-width: 800px;
       margin: 20px auto;
-      background-color: var(--dark-gray);
+      background-color: #111;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.03);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
     }
 
     h2 {
-      color: var(--light-gray);
+      color: var(--primary-color);
       text-align: center;
       margin-bottom: 25px;
     }
@@ -86,16 +84,16 @@
     input, textarea {
       padding: 12px;
       margin-top: 5px;
-      background: #1a1a1a;
+      background: #222;
       color: #fff;
-      border: 1px solid #333;
+      border: 1px solid #444;
       border-radius: 5px;
     }
 
     button {
       margin-top: 20px;
       padding: 12px;
-      background-color: var(--accent-color);
+      background-color: var(--primary-color);
       color: white;
       font-weight: bold;
       border: none;
@@ -105,13 +103,13 @@
     }
 
     button:hover {
-      background-color: #1db142;
+      background-color: #999;
     }
 
     .about-btn, .whatsapp-btn {
       display: inline-block;
       margin-top: 25px;
-      background-color: var(--accent-color);
+      background-color: var(--primary-color);
       padding: 12px 25px;
       border-radius: 5px;
       text-decoration: none;
@@ -125,36 +123,28 @@
       display: block;
       margin: 15px auto 0;
       width: fit-content;
-      background-color: #1c1c1c;
-      border: 1px solid #333;
+      background-color: #444;
     }
 
     .about-btn:hover, .whatsapp-btn:hover {
-      background-color: #1db142;
-      color: #000;
+      background-color: #666;
     }
 
     footer {
-      background-color: var(--dark-gray);
+      background-color: #111;
       padding: 40px 20px 20px;
       text-align: center;
-      color: var(--light-gray);
+      color: #ccc;
     }
 
     .contact-info-footer {
       margin-bottom: 25px;
     }
 
-    .contact-info-footer p, 
-    .contact-info-footer a {
+    .contact-info-footer p {
       margin: 10px 0;
-      color: var(--light-gray);
-      text-decoration: none;
+      color: #ccc;
       font-size: 15px;
-    }
-
-    .contact-info-footer a:hover {
-      color: var(--accent-color);
     }
 
     iframe {
@@ -211,17 +201,22 @@
   </form>
 
   <a href="about.html" class="about-btn">Learn More About Us</a>
-
-  <a href="https://wa.me/254743902529" target="_blank" class="whatsapp-btn">
-    📱 Chat on WhatsApp: +254 743 902 529
-  </a>
-
-  <a href="https://wa.me/254704088883" target="_blank" class="whatsapp-btn">
-    📱 Chat on WhatsApp: +254 704 088 883
-  </a>
 </div>
 
 <footer>
   <div class="contact-info-footer">
     <p><strong>Address:</strong> Athi River Devki (Grayland VI)</p>
-    <p><strong>Phone 1:</strong> <a href="tel:+254743902529">+2
+    <p><strong>Phone:</strong> +254 743 902 529</p>
+    <p><strong>Email:</strong> info@reayoufurniture.com</p>
+  </div>
+
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.726435798092!2d37.00938061460908!3d-1.4481141989977411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3d6a60f7c8db%3A0x8f0f3d3b52e9db3!2sGrayland%20VI%2C%20Athi%20River!5e0!3m2!1sen!2ske!4v1685307284900!5m2!1sen!2ske"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</footer>
+
+</body>
+</html>
