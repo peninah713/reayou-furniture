@@ -3,55 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <title>Contact Us - Reayou Furniture LTD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root {
-      --background: #000;
-      --text: #fff;
-      --primary: #fff;
-      --whatsapp-bg: #25d366;
-      --whatsapp-hover: #1ebe5d;
+      --beige: #f5f0e6;
+      --green: #2f4f4f;
       --gray: #111;
       --light-gray: #ccc;
+      --text: #fff;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body, html {
       font-family: 'Segoe UI', sans-serif;
-      
-      color: var(--text);
-      line-height: 1.6;
       background: url("house9.jfif") center/cover no-repeat;
-      
+      color: var(--text);
     }
 
     nav {
-      background: var(--gray);
-      text-align: center;
-      padding: 15px;
+      background: var(--green);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    nav a {
-      color: var(--text);
-      margin: 0 20px;
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
       text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
+      font-weight: 500;
+      transition: color 0.3s ease;
     }
 
-    nav a:hover { color: var(--light-gray); }
+    .nav-links a:hover {
+      color: #dcdcdc;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--green);
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
 
     header {
       text-align: center;
-      padding: 50px 20px;
-      
+      padding: 60px 20px 30px;
+      background-color: rgba(0, 0, 0, 0.5);
     }
 
-    header h1 { font-size: 2.5em; text-shadow: 1px 1px 3px #000; }
+    header h1 {
+      font-size: 2.4em;
+      color: #fff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    }
 
     .container {
       max-width: 800px;
       margin: 20px auto;
-      background: var(--gray);
+      background: rgba(0, 0, 0, 0.7);
       padding: 30px;
       border-radius: 10px;
     }
@@ -62,7 +116,10 @@
       margin-bottom: 25px;
     }
 
-    form { display: flex; flex-direction: column; }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
 
     label {
       margin-top: 15px;
@@ -81,7 +138,7 @@
     button {
       margin-top: 20px;
       padding: 12px;
-      background: var(--primary);
+      background: var(--beige);
       color: #000;
       font-weight: bold;
       cursor: pointer;
@@ -90,14 +147,16 @@
       transition: background 0.3s;
     }
 
-    button:hover { background: #ddd; }
+    button:hover {
+      background: #ddd;
+    }
 
     .whatsapp-btn {
       display: block;
       margin: 20px auto;
       padding: 12px 25px;
-      background: var(--whatsapp-bg);
-      color: var(--text);
+      background: #25d366;
+      color: #fff;
       text-align: center;
       border-radius: 5px;
       text-decoration: none;
@@ -105,18 +164,8 @@
       transition: background 0.3s;
     }
 
-    .whatsapp-btn:hover { background: var(--whatsapp-hover); }
-
-    footer {
-      background: var(--gray);
-      padding: 40px 20px;
-      text-align: center;
-      color: var(--light-gray);
-    }
-
-    .contact-info-footer p {
-      margin: 10px 0;
-      font-size: 15px;
+    .whatsapp-btn:hover {
+      background: #1ebe5d;
     }
 
     iframe {
@@ -127,56 +176,98 @@
       margin-top: 25px;
     }
 
+    footer {
+      background-color: var(--green);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+      color: #ccc;
+    }
+
     @media (max-width: 600px) {
-      header h1 { font-size: 1.8em; }
-      nav a { display: block; margin: 10px 0; }
-      .container { margin: 10px; padding: 20px; }
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      .container {
+        margin: 10px;
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact Us</a>
-</nav>
+  <nav>
+    <div class="logo">Reayou</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
 
-<header>
-  <h1>Contact Reayou Furniture LTD</h1>
-</header>
+  <header>
+    <h1>Contact Reayou Furniture LTD</h1>
+  </header>
 
-<div class="container">
-  <h2>Get In Touch</h2>
-  <form id="contactForm">
-    <label for="name">Your Name</label>
-    <input type="text" id="name" placeholder="Enter your name" required>
+  <div class="container">
+    <h2>Get In Touch</h2>
+    <form id="contactForm">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
 
-    <label for="email">Your Email</label>
-    <input type="email" id="email" placeholder="Enter your email" required>
+      <label for="email">Your Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
 
-    <label for="message">Your Message</label>
-    <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+      <label for="message">Your Message</label>
+      <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
 
-    <button type="submit">Send Message</button>
-  </form>
+      <button type="submit">Send Message</button>
+    </form>
 
-  <a href="https://wa.me/+254 743 902529" target="_blank" class="whatsapp-btn">
-    📱 Chat on WhatsApp: 0743 902 529
-  </a>
-  <a href="https://wa.me/0704088883 " target="_blank" class="whatsapp-btn">
-    📱 Chat on WhatsApp: 0704088883 
-  </a>
-</div>
-
-<footer>
-  <div class="contact-info-footer">
-    <p><strong>Address:</strong> Athi River Devki (Grayland VI)</p>
-    <p><strong>Phone 1:</strong> +254 743 902 529</p>
-    <p><strong>Phone 2:</strong> +254 721 567 890</p>
-    <p><strong>Email:</strong> info@reayoufurniture.com</p>
+    <a href="https://wa.me/254743902529" target="_blank" class="whatsapp-btn">
+      📱 Chat on WhatsApp: 0743 902 529
+    </a>
+    <a href="https://wa.me/254704088883" target="_blank" class="whatsapp-btn">
+      📱 Chat on WhatsApp: 0704 088 883
+    </a>
   </div>
+
+  <footer>
+    <p><strong>Reayou Furniture LTD</strong> | Athi River - Devki, Grayland VI</p>
+    <p>
+      📞 <a href="tel:+254715780473">0715 780 473</a> |
+      ✉️ <a href="mailto:info@reayoufurniture.com">info@reayoufurniture.com</a>
+    </p>
+    <p>
+      <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px;">📘</a>
+      <a href="https://www.instagram.com" target="_blank" style="margin: 0 10px;">📸</a>
+      <a href="https://wa.me/254715780473" target="_blank" style="margin: 0 10px;">💬</a>
+    </p>
+    <p>&copy; 2025 Reayou Furniture LTD. All rights reserved.</p>
+  </footer>
 
   <iframe
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.726435798092!2d37.00938061460908!3d-1.4481141989977411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3d6a60f7c8db%3A0x8f0f3d3b52e9db3!2sGrayland%20VI%2C%20Athi%20River!5e0!3m2!1sen!2ske!4v1685307284900!5m2!1sen!2ske"
@@ -184,15 +275,19 @@
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade">
   </iframe>
-</footer>
 
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    alert('Thank you for your message! We will get back to you shortly.');
-    this.reset();
-  });
-</script>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Thank you for your message! We will get back to you shortly.');
+      this.reset();
+    });
+  </script>
 
 </body>
 </html>
