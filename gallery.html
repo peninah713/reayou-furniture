@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +11,7 @@
       --green: #6B8E23;
       --hover-green: #A4C47B;
       --text: #3E2C23;
+      --cta-bg: #FAEEDC;
     }
 
     body {
@@ -106,26 +105,37 @@
 
     .background-section {
       margin: 60px 0 40px;
-      background-color: var(--green);
-      color: #fff;
+      background-color: var(--cta-bg);
+      color: var(--text);
       padding: 50px 20px;
       text-align: center;
       font-size: 1.8em;
       font-weight: 500;
+      border-top: 2px solid var(--green);
+      border-bottom: 2px solid var(--green);
     }
 
     .background-section a {
-      color: #fff;
+      color: var(--green);
       font-weight: bold;
       text-decoration: underline;
     }
 
     footer {
-      background-color: var(--green);
-      color: #fff;
-      padding: 30px 20px;
+      background-color: #222;
+      color: #eee;
+      padding: 40px 20px;
       text-align: center;
-      font-size: 14px;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ccc;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #fff;
     }
 
     .modal {
@@ -190,7 +200,7 @@
     <h1>Our Gallery</h1>
   </header>
 
-  <main>
+
     <main>
     <!-- Office Furniture Section -->
     <section>
@@ -305,18 +315,18 @@
       </div>
     </section>
 
-    <!-- Call to Action -->
+   
+    </div>
+  </main>
     <div class="background-section">
       Discover Comfort & Style with Reayou Furniture — for more info click <a href="contact.html">contact</a>
     </div>
   </main>
 
- 
-  </main>
-
   <footer>
-    <p>Reayou Furniture LTD | Athi River Devki (Grayland VI)</p>
-    <p>Call us: 0715 780 473 | Email: info@reayoufurniture.com</p>
+    <p>&copy; 2025 Reayou Furniture. All rights reserved.</p>
+    <p><a href="tel:+254704088883">0704 088 883</a> | <a href="mailto:furniturereayou@gmail.com">furniturereayou@gmail.com</a></p>
+    <p>Visit us: Athi River, Devki 9 (Grayland VI), Kenya</p>
   </footer>
 
   <div id="imageModal" class="modal">
@@ -347,22 +357,4 @@
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
