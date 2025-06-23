@@ -9,6 +9,15 @@
   <title>Reayou Furniture | Premium Office Furniture</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
+    :root {
+      --bg: #F5F3EE;
+      --brown: #5D4037;
+      --green: #6B8E23;
+      --hover-green: #A4C47B;
+      --text: #3E2C23;
+      --light-card: #FAF7F2;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -17,9 +26,9 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #4B2E2B; /* dark brown */
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      background-color: #FDF6E3; /* soft cream */
     }
 
     a {
@@ -31,7 +40,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: #E2725B; /* terracotta */
+      background-color: var(--brown);
       padding: 15px 0;
       z-index: 1000;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -66,7 +75,7 @@
     }
 
     .nav-links a:hover {
-      color: #C9A66B; /* soft gold */
+      color: var(--hover-green);
     }
 
     .hero {
@@ -83,7 +92,7 @@
     .hero-content {
       max-width: 900px;
       padding: 20px;
-      background: rgba(226, 114, 91, 0.75); /* semi-transparent terracotta */
+      background: rgba(93, 64, 55, 0.75); /* semi-transparent brown */
       border-radius: 10px;
     }
 
@@ -100,7 +109,7 @@
     }
 
     .btn {
-      background-color: #708238; /* olive green */
+      background-color: var(--green);
       color: #fff;
       padding: 14px 28px;
       border-radius: 5px;
@@ -109,8 +118,8 @@
     }
 
     .btn:hover {
-      background-color: #C9A66B;
-      color: #4B2E2B;
+      background-color: var(--hover-green);
+      color: var(--text);
     }
 
     .features, .products {
@@ -118,7 +127,7 @@
     }
 
     .features {
-      background-color: #FAF3E0;
+      background-color: var(--light-card);
     }
 
     .section-title {
@@ -133,7 +142,7 @@
       content: '';
       width: 80px;
       height: 2px;
-      background: #E2725B;
+      background: var(--green);
       display: block;
       margin: 15px auto;
     }
@@ -147,12 +156,12 @@
     }
 
     .feature-card {
-      background-color: #fff3ea;
+      background-color: #fff;
       padding: 30px;
-      border: 1px solid #eee;
+      border: 1px solid #ddd;
       text-align: center;
       transition: transform 0.3s ease;
-      color: #4B2E2B;
+      color: var(--text);
     }
 
     .feature-card:hover {
@@ -162,7 +171,7 @@
     .feature-icon {
       font-size: 2.5rem;
       margin-bottom: 15px;
-      color: #708238;
+      color: var(--green);
     }
 
     .feature-card h3 {
@@ -171,13 +180,12 @@
     }
 
     .feature-card p {
-      color: #6B4C4B;
+      color: #5a4238;
       font-size: 0.95rem;
     }
 
     .products {
-      background-color: #FDF6E3;
-      color: #4B2E2B;
+      background-color: var(--bg);
     }
 
     .product-card {
@@ -213,7 +221,7 @@
     }
 
     .footer {
-      background-color: #E2725B;
+      background-color: var(--brown);
       color: #fff;
       text-align: center;
       padding: 40px 20px;
@@ -226,7 +234,7 @@
     }
 
     .footer a:hover {
-      color: #C9A66B;
+      color: var(--hover-green);
     }
   </style>
 </head>
