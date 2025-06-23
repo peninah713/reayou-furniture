@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,30 +7,43 @@
   <title>Gallery - Reayou Furniture LTD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    :root {
+      --bg: #FDF6EE;
+      --ivory: #FFFDF8;
+      --green: #6B8E23;
+      --hover-green: #A4C47B;
+      --text: #3E2C23;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #050505;
-      color: white;
+      background-color: var(--bg);
+      color: var(--text);
       transition: background-color 0.3s, color 0.3s;
     }
 
     nav {
-      background-color: #181717;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: var(--green);
       padding: 12px 0;
       text-align: center;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
     nav a {
-      color: white;
+      color: #fff;
       margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
     }
 
     nav a:hover {
-      color: #bbb;
+      color: var(--hover-green);
     }
 
     header {
@@ -42,6 +57,7 @@
       justify-content: center;
       text-transform: uppercase;
       letter-spacing: 2px;
+      margin-top: 60px;
     }
 
     main {
@@ -55,7 +71,7 @@
       text-align: center;
       text-transform: uppercase;
       font-size: 1.6em;
-      border-bottom: 2px solid #ccc;
+      border-bottom: 2px solid var(--green);
       padding-bottom: 10px;
     }
 
@@ -90,8 +106,8 @@
 
     .background-section {
       margin: 60px 0 40px;
-      background-color: #000;
-      color: white;
+      background-color: var(--green);
+      color: #fff;
       padding: 50px 20px;
       text-align: center;
       font-size: 1.8em;
@@ -99,20 +115,19 @@
     }
 
     .background-section a {
-      color: #1a6b3e;
+      color: #fff;
       font-weight: bold;
       text-decoration: underline;
     }
 
     footer {
-      background-color: rgb(12, 12, 12);
-      color: rgb(238, 233, 233);
+      background-color: var(--green);
+      color: #fff;
       padding: 30px 20px;
       text-align: center;
       font-size: 14px;
     }
 
-    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -127,13 +142,13 @@
     }
 
     .modal-content {
-      background-color: #222;
+      background-color: #fff;
+      color: var(--text);
       margin: auto;
       padding: 20px;
       border: 1px solid #888;
       width: 80%;
       max-width: 600px;
-      color: white;
       border-radius: 10px;
       text-align: center;
     }
@@ -153,7 +168,7 @@
     }
 
     .close:hover {
-      color: #fff;
+      color: #000;
     }
 
     @media (max-width: 600px) {
@@ -164,7 +179,6 @@
   </style>
 </head>
 <body>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
@@ -177,6 +191,7 @@
   </header>
 
   <main>
+    <main>
     <!-- Office Furniture Section -->
     <section>
       <h2>Office Furniture</h2>
@@ -296,12 +311,14 @@
     </div>
   </main>
 
+ 
+  </main>
+
   <footer>
     <p>Reayou Furniture LTD | Athi River Devki (Grayland VI)</p>
     <p>Call us: 0715 780 473 | Email: info@reayoufurniture.com</p>
   </footer>
 
-  <!-- Modal Structure -->
   <div id="imageModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -310,7 +327,6 @@
     </div>
   </div>
 
-  <!-- JavaScript -->
   <script>
     function openModal(src, desc) {
       document.getElementById('modalImg').src = src;
@@ -328,6 +344,25 @@
       }
     }
   </script>
-
 </body>
-</html> is this proffesional and i want the nav bar to be contanst even when one sroll up and down
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
