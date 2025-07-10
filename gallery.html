@@ -20,7 +20,6 @@
       padding: 0;
       background-color: var(--bg);
       color: var(--text);
-      transition: background-color 0.3s, color 0.3s;
     }
 
     nav {
@@ -101,6 +100,20 @@
     .gallery-item p {
       margin-top: 10px;
       font-size: 0.95em;
+    }
+
+    .price-list {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+      font-size: 0.9em;
+      color: #6B8E23;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .price-list li {
+      margin: 2px 0;
     }
 
     .background-section {
@@ -191,137 +204,86 @@
 <body>
   <nav>
     <a href="index.html">Home</a>
-        <a href="gallery.html">Products</a>
-        <a href="about.html">About</a>
-        <a href="about.html">Contact</a>
+    <a href="gallery.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="about.html">Contact</a>
   </nav>
 
   <header>
     <h1>Our Gallery</h1>
   </header>
 
-
-    <main>
-    <!-- Office Furniture Section -->
+  <main>
     <section>
       <h2>Office Furniture</h2>
       <div class="gallery-images">
         <div class="gallery-item" onclick="openModal('office1.jpeg', 'Modern Office Desk and Chair')">
           <img src="office1.jpeg" alt="Office 1">
           <p>Modern Office Desk and Chair</p>
+          <ul class="price-list">
+            <li>1.4m - Ksh. 12,500</li>
+            <li>1.6m - Ksh. 14,000</li>
+          </ul>
         </div>
-        <div class="gallery-item" onclick="openModal('office2.jpeg', 'Office Workstation Setup')">
-          <img src="office2.jpeg" alt="Office 2">
-          <p>Office Workstation Setup</p>
+        <div class="gallery-item" onclick="openModal('office3.jpeg', 'Manager\'s Table and Chairs')">
+          <img src="office3.jpeg" alt="Office 3">
+          <p>Manager's Table and Chairs</p>
+          <ul class="price-list">
+            <li>1.4m - Ksh. 15,000</li>
+            <li>1.6m - Ksh. 17,500</li>
+          </ul>
         </div>
-        <div class="gallery-item" onclick="openModal('conference.jfif', 'Conference Table and Chairs')">
-          <img src="conference.jfif" alt="Conference Table">
-          <p>Conference Table and Chairs</p>
-        </div>
-         <div class="gallery-item" onclick="openModal('office3.jpeg', 'Conference Table and Chairs')">
-          <img src="office3.jpeg" alt="Conference Table">
-          <p>managers table and Chairs</p>
-        </div>
-         <div class="gallery-item" onclick="openModal('office4.jpeg', 'Conference Table and Chairs')">
-          <img src="office4.jpeg" alt="Conference Table">
-          <p>work setup Table and Chairs</p>
-        </div>
-         <div class="gallery-item" onclick="openModal('office5.jpeg', 'Conference Table and Chairs')">
-          <img src="office5.jpeg" alt="Conference Table">
-          <p>egonomic office Chairs</p>
-        </div>
-         <div class="gallery-item" onclick="openModal('conference.jfif', 'Conference Table and Chairs')">
-          <img src="office9.jfif" alt="Conference Table">
-          <p>Comfortable office Chairs</p>
-        </div>
-         <div class="gallery-item" onclick="openModal('conference.jfif', 'Conference Table and Chairs')">
-          <img src="office8.jfif" alt="Conference Table">
-          <p>Comfy office chair</p>
-        </div>
-         <div class="gallery-item" onclick="openModal('conference.jfif', 'Conference Table and Chairs')">
-          <img src="office desk.jfif" alt="Conference Table">
-          <p>Conference Table and Chairs</p>
-        </div>
-         <div class="gallery-item" onclick="openModal('conference.jfif', 'Conference Table and Chairs')">
-          <img src="office1.jfif" alt="Conference Table">
-          <p>egonomic offiice chair and desk</p>
+        <div class="gallery-item" onclick="openModal('office4.jpeg', 'Work Setup Table and Chairs')">
+          <img src="office4.jpeg" alt="Office 4">
+          <p>Work Setup Table and Chairs</p>
+          <ul class="price-list">
+            <li>1.2m - Ksh. 10,000</li>
+            <li>1.4m - Ksh. 11,500</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- House Furniture Section -->
     <section>
       <h2>House Furniture</h2>
       <div class="gallery-images">
-        <div class="gallery-item" onclick="openModal('house1.jpeg', 'Cozy Living Room Sofa')">
+        <div class="gallery-item" onclick="openModal('house3.jfif', 'Cozy Living Room Sofa')">
           <img src="house3.jfif" alt="House Sofa">
           <p>Cozy Living Room Sofa</p>
+          <ul class="price-list">
+            <li>2-seater - Ksh. 16,000</li>
+            <li>3-seater - Ksh. 21,000</li>
+          </ul>
         </div>
         <div class="gallery-item" onclick="openModal('house4.jfif', 'Wooden Dining Set')">
           <img src="house4.jfif" alt="Dining Set">
           <p>Wooden Dining Set</p>
-        </div>
-        <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
-          <img src="house8.jfif" alt="TV Stand">
-          <p>TV Stand and Cabinets</p>
-        </div>
-        <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
-          <img src="house6.jfif" alt="TV Stand">
-          <p>classy Cabinets</p>
-        </div>
-        <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
-          <img src="storage11.jfif" alt="TV Stand">
-          <p> make up Cabinets</p>
-        </div>
-        <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
-          <img src="house9.jfif" alt="TV Stand">
-          <p>TV Stand and Cabinets</p>
-        </div>
-        <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
-          <img src="house10.jfif" alt="TV Stand">
-          <p>TV Stand and Cabinets</p>
-        </div>
-        <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
-          <img src="house11.jfif" alt="TV Stand">
-          <p>dinning chairs and table</p>
-        </div>
-         <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
-          <img src="back4.jfif" alt="TV Stand">
-          <p>kitchen cabinets</p>
-        </div>
-         <div class="gallery-item" onclick="openModal('house6.jfif', 'TV Stand and Cabinets')">
-          <img src="house1.jpeg" alt="TV Stand">
-          <p>living room table</p>
+          <ul class="price-list">
+            <li>4 seats - Ksh. 22,000</li>
+            <li>6 seats - Ksh. 28,500</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Storage Units Section -->
     <section>
       <h2>Storage Units</h2>
       <div class="gallery-images">
         <div class="gallery-item" onclick="openModal('storage1.jpeg', 'Wooden Storage Cabinet')">
           <img src="storage1.jpeg" alt="Storage 1">
           <p>Wooden Storage Cabinet</p>
-        </div>
-        <div class="gallery-item" onclick="openModal('storage4.jpeg', 'Shelved Bookcase Unit')">
-          <img src="storage4.jpeg" alt="Bookcase">
-          <p>Shelved Bookcase Unit</p>
-        </div>
-        <div class="gallery-item" onclick="openModal('storage10.jfif', 'Compact Storage for Living Room')">
-          <img src="storage10.jfif" alt="Compact Storage">
-          <p>Compact Storage for Living Room</p>
+          <ul class="price-list">
+            <li>2ft - Ksh. 7,000</li>
+            <li>3ft - Ksh. 9,500</li>
+          </ul>
         </div>
       </div>
     </section>
+  </main>
 
-   
-    </div>
-  </main>
-    <div class="background-section">
-      Discover Comfort & Style with Reayou Furniture — for more info click <a href="contact.html">contact</a>
-    </div>
-  </main>
+  <div class="background-section">
+    Discover Comfort & Style with Reayou Furniture — for more info click <a href="contact.html">contact</a>
+  </div>
 
   <footer>
     <p>&copy; 2025 Reayou Furniture. All rights reserved.</p>
@@ -356,5 +318,3 @@
   </script>
 </body>
 </html>
-
-    
